@@ -1,9 +1,10 @@
+#O relatório gera 14 páginas ao todo de itens
 import requests
 import json
 import csv
 import time
 
-# Use a URL exata que funcionou no seu último teste
+#URL da consulta indicada no swagger dos dados abertos para consultar 
 url_base = "https://dadosabertos.compras.gov.br/modulo-material/4_consultarItemMaterial"
 
 headers = {
@@ -11,25 +12,34 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
 
+
+#Inicialização das variaáveis de contador para puxar todas as páginas
 todos_os_itens = []
 pagina_atual = 1
 total_paginas = 1  # Começa em 1 e será atualizado dinamicamente na primeira resposta
 
 print("=== INICIANDO A EXTRAÇÃO AUTOMÁTICA DE TODAS AS PÁGINAS ===")
 
+
+#Laço de repetição para buscar os dados
 while pagina_atual <= total_paginas:
-    # Parâmetros da paginação
+    # Parâmetros para buscar os dados
     params = {
         "pagina": pagina_atual,
-        "tamanho-pagina": 500,  # Mantém 500 registros por página para andar rápido  
-        "codigoGrupo": 65
+        "tamanho-pagina": 500,  # Mantém 500 registros por página para andar rápido
+        #identifica apenas itens ativos
+        "statusItem": 1,
+        #identifica a classe dos itens, no caso "DROGAS E MEDICAMENTOS"
+        "codigoClasse":6505        
     }
     
+    #Retorno sobre o andamento da leitura e compilação das páginas
     print(f"Baixando página {pagina_atual} de {total_paginas}...", end="", flush=True)
     
     try:
         response = requests.get(url_base, params=params, headers=headers, timeout=30)
         
+        #Testa se a conexão está 5.5
         if response.status_code == 200:
             dados = response.json()
             
