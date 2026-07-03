@@ -100,10 +100,10 @@ Após a conclusão do processamento, os arquivos serão gerados no diretório co
 
 ## Arquivos Gerados
 
-| Arquivo                   | Descrição                               |
-| ------------------------- | --------------------------------------- |
-| catmat\_classe\_6505.json | Base completa dos itens em formato JSON |
-| catmat\_classe\_6505.csv  | Base completa dos itens em formato CSV  |
+| Arquivo                 | Descrição                               |
+| ----------------------- | --------------------------------------- |
+| todos_os_materiais.json | Base completa dos itens em formato JSON |
+| todos_os_materiais.csv  | Base completa dos itens em formato CSV  |
 
 ## Aplicações
 
