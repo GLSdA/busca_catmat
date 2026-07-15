@@ -30,7 +30,7 @@ while pagina_atual <= total_paginas:
         #identifica apenas itens ativos
         "statusItem": 1,
         #identifica a classe dos itens, no caso "DROGAS E MEDICAMENTOS"
-        "codigoClasse":6505        
+        "codigoGrupo":65        
     }
     
     #Retorno sobre o andamento da leitura e compilação das páginas
