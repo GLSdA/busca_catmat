@@ -26,7 +26,7 @@ while pagina_atual <= total_paginas:
     # Parâmetros para buscar os dados
     params = {
         "pagina": pagina_atual,
-        "tamanho-pagina": 500,  # Mantém 500 registros por página para andar rápido
+        "tamanhoPagina": 500,  # Mantém 500 registros por página para andar rápido
         #identifica apenas itens ativos
         "statusItem": 1,
         #identifica a classe dos itens, no caso "DROGAS E MEDICAMENTOS"
